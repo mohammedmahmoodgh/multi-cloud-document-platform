@@ -1,0 +1,11 @@
+POST http://localhost:8080/api/documents
+Content-Type: application/json
+
+{
+  "fileName": "contract.pdf",
+  "provider": "AWS_S3",
+  "externalFileId": "S3-ABC-001",
+  "contentType": "application/pdf",
+  "size": 5000000,
+  "ownerId": "user123"
+}
