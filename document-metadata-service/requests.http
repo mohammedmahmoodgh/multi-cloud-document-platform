@@ -1,11 +1,176 @@
 POST http://localhost:8080/api/documents
 Content-Type: application/json
 
+
+
+{
+  "fileName": "duplicate-test.pdf",
+  "provider": "AWS",
+  "externalFileId": "DUP-001",
+  "contentType": "application/pdf",
+  "size": 5000,
+  "ownerId": "USER-001"
+}
+
+###
+
+GET http://localhost:8080/api/documents
+
+###
+
+GET http://localhost:8080/api/documents/2
+
+###
+
+PUT http://localhost:8080/api/documents/3
+Content-Type: application/json
+
+{
+  "fileName": "updated-contract.pdf",
+  "provider": "AZURE",
+  "externalFileId": "AZURE-999",
+  "contentType": "application/pdf",
+  "size": 750000,
+  "ownerId": "user456"
+}
+
+###
+
+DELETE http://localhost:8080/api/documents/2
+
+###
+POST http://localhost:8080/api/documents
+Content-Type: application/json
+
+{
+  "fileName": "",
+  "provider": "",
+  "externalFileId": "",
+  "contentType": "",
+  "size": -10,
+  "ownerId": ""
+}
+
+###
+GET http://localhost:8080/api/documents/9
+
+###
+GET http://localhost:8080/api/documents/99999
+
+###
+PUT http://localhost:8080/api/documents/9
+Content-Type: application/json
+
+{
+  "fileName": "updated-duplicate-test.pdf",
+  "provider": "AWS",
+  "externalFileId": "DUP-001",
+  "contentType": "application/pdf",
+  "size": 8000,
+  "ownerId": "USER-001"
+}
+
+###
+PUT http://localhost:8080/api/documents/99999
+Content-Type: application/json
+
+{
+  "fileName": "updated-test.pdf",
+  "provider": "AWS",
+  "externalFileId": "TEST-99999",
+  "contentType": "application/pdf",
+  "size": 8000,
+  "ownerId": "USER-001"
+}
+
+###
+DELETE http://localhost:8080/api/documents/9
+
+###
+GET http://localhost:8080/api/documents/9
+###
+DELETE http://localhost:8080/api/documents/9
+###
+GET http://localhost:8080/api/documents/999999
+###
+PUT /api/documents/999999
+
+###
+GET http://localhost:8080/api/documents
+
+###
+
+### Update document ID 3
+PUT http://localhost:8080/api/documents/3
+Content-Type: application/json
+
+{
+  "fileName": "updated-again.pdf",
+  "provider": "AZURE",
+  "externalFileId": "AZURE-999",
+  "contentType": "application/pdf",
+  "size": 900000,
+  "ownerId": "user789"
+}
+
+###
+
+POST http://localhost:8080/api/documents
+Content-Type: application/json
+
 {
   "fileName": "contract.pdf",
-  "provider": "AWS_S3",
-  "externalFileId": "S3-ABC-001",
+  "provider": "AWS",
+  "externalFileId": "AWS-FILE-001",
   "contentType": "application/pdf",
-  "size": 5000000,
-  "ownerId": "user123"
+  "size": 500000,
+  "ownerId": "USER-001"
 }
+
+###
+
+POST http://localhost:8080/api/documents
+Content-Type: application/json
+
+{
+  "fileName": "invoice.pdf",
+  "provider": "AZURE",
+  "externalFileId": "AZURE-FILE-001",
+  "contentType": "application/pdf",
+  "size": 250000,
+  "ownerId": "USER-001"
+}
+
+###
+POST http://localhost:8080/api/documents/DOC-000001/copies
+Content-Type: application/json
+
+{
+  "provider": "AZURE",
+  "externalFileId": "AZURE-CONTRACT-002",
+  "contentType": "application/pdf",
+  "size": 620000,
+  "ownerId": "USER-001"
+}
+
+###
+POST http://localhost:8080/api/documents/DOC-000002/copies
+Content-Type: application/json
+
+{
+  "provider": "AWS",
+  "externalFileId": "AWS-FILE-001",
+  "contentType": "application/pdf",
+  "size": 300000,
+  "ownerId": "USER-001"
+}
+
+###
+GET http://localhost:8080/api/documents/DOC-000001/copies
+
+###
+GET http://localhost:8080/api/documents/DOC-999999/copies
+
+###
+
+GET http://localhost:8080/api/documents/DOC-000001/copies

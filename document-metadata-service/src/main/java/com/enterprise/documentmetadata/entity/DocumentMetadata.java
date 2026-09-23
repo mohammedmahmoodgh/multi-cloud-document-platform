@@ -4,11 +4,16 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "document_metadata")
+
+
 public class DocumentMetadata {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "document_code")
+    private String documentCode;
 
     @Column(name = "file_name", nullable = false)
     private String fileName;
@@ -38,6 +43,15 @@ public class DocumentMetadata {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getDocumentCode() {
+        return documentCode;
+    }
+
+    public void setDocumentCode(String documentCode) {
+        this.documentCode = documentCode;
+    }
+
 
     public String getFileName() {
         return fileName;
